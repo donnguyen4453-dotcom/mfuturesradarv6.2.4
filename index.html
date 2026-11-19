@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="dark"><head><script>(function(){try{var S={"fr_gh_cfg": "{\"owner\": \"donnguyen4453-dotcom\", \"repo\": \"mfuturesradarv6.2.4\", \"branch\": \"main\", \"data_path\": \"m_futures_radar_sync.json\", \"html_path\": \"index.html\", \"token\": \"\", \"auto_public\": true, \"last_web_url\": \"https://donnguyen4453-dotcom.github.io/mfuturesradartest622/\"}"},TS="2026-11-19T11:17:33";if(localStorage.getItem('fr_seed_ts')!==TS){Object.keys(S).forEach(function(k){localStorage.setItem(k,String(S[k]));});localStorage.setItem('fr_seed_ts',TS);}}catch(e){}})();</script>
+<html lang="vi" data-theme="dark"><head><script>(function(){try{var S={"fr_gh_cfg": "{\"owner\": \"donnguyen4453-dotcom\", \"repo\": \"mfuturesradarv6.2.4\", \"branch\": \"main\", \"data_path\": \"m_futures_radar_sync.json\", \"html_path\": \"index.html\", \"token\": \"\", \"auto_public\": true, \"last_web_url\": \"https://donnguyen4453-dotcom.github.io/mfuturesradarv6.2.4/\"}"},TS="2026-11-19T13:43:39";if(localStorage.getItem('fr_seed_ts')!==TS){Object.keys(S).forEach(function(k){localStorage.setItem(k,String(S[k]));});localStorage.setItem('fr_seed_ts',TS);}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0b1018">
 <meta name="mobile-web-app-capable" content="yes">
@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Futures Radar"><meta name="theme-color" content="#10151c">
-<title>M-Futures Radar v6.2.4 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026</title>
+<title>M-Futures Radar v6.2.3 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026</title>
 <style>:root{--bg:#10151c;--sf:#18202a;--ln:#2a3542;--tx:#e6ebf1;--mu:#8795a6;--up:#3cc4a4;--dn:#ef6a5b;--am:#e8b04a;color-scheme:dark}
 :root[data-theme=light]{--bg:#f3f1ec;--sf:#fff;--ln:#d9d5cb;--tx:#1b232c;--mu:#667383;--up:#0f8f74;--dn:#c4432f;--am:#a8700c;color-scheme:light}
 .hdr{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.hdr h1{font-size:15px;margin:6px 0;flex:1 1 160px}.top{font-size:12px;color:var(--mu);display:flex;align-items:center;gap:4px;white-space:nowrap;flex:0 0 auto}.top input{padding:0}.hdr .row{flex:0 1 auto;flex-wrap:wrap;justify-content:flex-end;gap:6px}.hdr .row>*{flex:0 0 auto}#qab{font-size:13px;padding:6px 8px}.hdr select{padding:6px 4px}.hdr .top{font-size:12px;gap:4px}.hdr .row{gap:6px}@media (max-width:430px){.hdr .top .atl{display:none}.hdr .top::before{content:'📌';font-size:17px;line-height:1}.hdr .top{order:9}}.hdr select,.hdr button{padding:6px 8px;flex:0 0 auto;min-width:0}
@@ -117,6 +117,82 @@ body {
 .fr-flt-sep { width: 1px; height: 16px; background: rgba(255,255,255,0.14); flex-shrink: 0; margin: 0 2px; }
 .fr-flt-cnt { opacity: 0.78; font-size: 10px; font-weight: 700; }
 .fr-hidden-by-filter { display: none !important; }
+#fr-filter-bar.collapsed {
+  padding: 2px 8px;
+  min-height: 24px;
+}
+#fr-filter-bar.collapsed > .fr-flt-btn:not(#fr-flt-toggle),
+#fr-filter-bar.collapsed > .fr-flt-sep {
+  display: none !important;
+}
+#fr-flt-col-sum {
+  display: none;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fde68a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 34px);
+}
+#fr-filter-bar.collapsed > #fr-flt-col-sum {
+  display: inline-flex;
+}
+.fr-col-btn {
+  margin-left: auto;
+  min-width: 24px;
+  height: 20px;
+  padding: 0 6px !important;
+  justify-content: center;
+  font-size: 10px !important;
+  line-height: 1;
+}
+.fr-hdr-col-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 5;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(15,23,42,0.82);
+  color: #cbd5e1;
+  border-radius: 6px;
+  height: 20px;
+  min-width: 24px;
+  padding: 0 6px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.fr-hdr-col-btn:hover { background: rgba(56,189,248,0.22); color: #fff; }
+#fr-hdr-mini {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  flex-basis: 100%;
+  padding: 3px 7px;
+  margin: 2px 0 4px 0;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  font-size: 11px;
+  color: #cbd5e1;
+  box-sizing: border-box;
+}
+#fr-hdr-mini-lbl {
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#fr-hdr-mini-lbl:hover { color: #fbbf24; }
 .fr-pill {
   display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; padding: 2px 7px; border-radius: 999px;
   background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); font-size: 11px; font-weight: 600; white-space: nowrap;
@@ -331,7 +407,7 @@ html.fr-lock-scroll, body.fr-lock-scroll { overflow: hidden !important; overscro
   background: rgba(56,189,248,0.22);
 }
 </style></head><body><main>
-<header class="hdr"><img id="logo" class="logo" alt="" width="40" height="40"><h1 id="ttl">M-Futures Radar v6.2.4 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026<br><span style="font-weight:400;font-size:11px;color:var(--mu)">v6.2.4 - Official-release 15/11/2026 - updated 20</span></h1><div class="row"><button class="g" id="qab" title="Danh sách thêm nhanh">⚡ Thêm nhanh</button><select id="lang"><option value="vi">Tiếng Việt</option><option value="en">English</option></select><button class="g" id="thm" title="Sáng / Tối">☾</button><button class="g" id="fsb" title="Toàn màn hình / chạy như app">⛶</button><label class="top" title="Always on top"><input type="checkbox" id="atop"><span class="atl">Always on top</span></label><div class="exb" id="exb"><div class="ac srch" id="srch"><span class="si" id="ssi"></span><input id="sq" type="text" placeholder="Tìm cặp (Ctrl+F)" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search"><button type="button" class="sx" id="sqx" hidden aria-label="Xóa">✕</button><div class="sg" id="sqg" hidden></div></div><button type="button" class="exi vpn" id="vpnb" aria-label="VPN"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><i></i></button><span class="exs" id="exl"></span></div><small id="exst" hidden></small></div></header>
+<header class="hdr"><img id="logo" class="logo" alt="" width="40" height="40"><h1 id="ttl">M-Futures Radar v6.2.3 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026<br><span style="font-weight:400;font-size:11px;color:var(--mu)">v6.2.3 - Official-release 15/11/2026 - updated 20</span></h1><div class="row"><button class="g" id="qab" title="Danh sách thêm nhanh">⚡ Thêm nhanh</button><select id="lang"><option value="vi">Tiếng Việt</option><option value="en">English</option></select><button class="g" id="thm" title="Sáng / Tối">☾</button><button class="g" id="fsb" title="Toàn màn hình / chạy như app">⛶</button><label class="top" title="Always on top"><input type="checkbox" id="atop"><span class="atl">Always on top</span></label><div class="exb" id="exb"><div class="ac srch" id="srch"><span class="si" id="ssi"></span><input id="sq" type="text" placeholder="Tìm cặp (Ctrl+F)" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search"><button type="button" class="sx" id="sqx" hidden aria-label="Xóa">✕</button><div class="sg" id="sqg" hidden></div></div><button type="button" class="exi vpn" id="vpnb" aria-label="VPN"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><i></i></button><span class="exs" id="exl"></span></div><small id="exst" hidden></small></div></header>
 <div id="qa" class="card" hidden><div class="qh"><b>Danh sách thêm nhanh</b><button class="g" id="qax">Xong</button></div><input id="qs" style="width:100%" placeholder="Gõ tên cặp để gợi ý, bấm + để thêm, − để bớt" autocomplete="off" autocapitalize="characters" spellcheck="false"><label style="margin-top:8px">Cặp đang chọn</label><div id="qsel" class="chips"></div><div id="ql" class="ql"></div></div>
 
 <section class="tab on" id="t-scan">
@@ -404,7 +480,7 @@ html.fr-lock-scroll, body.fr-lock-scroll { overflow: hidden !important; overscro
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M-Futures Radar v6.2.4 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026
+M-Futures Radar v6.2.3 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026
 Bản chạy trên máy tính: CỬA SỔ RIÊNG (không mở Chrome/Edge), có khay hệ thống (tray icon), khởi động cùng Windows,
 và danh sách theme PC (Windows 98/2000/XP/7/11, macOS, iOS, Android 17, Manjaro, Arch, KDE Neon/Plasma, Zorin, Ubuntu,
 Hacker, IT, Trading, NC5, MS-DOS, Pascal, Console, Pro, Basic, Bank, Office, Lite) bên cạnh giao diện Sáng/Tối mặc định.
@@ -644,7 +720,7 @@ SNIP = """(function(){window.__FR__=1;try{var x=new XMLHttpRequest();x.open('GET
 var set=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){set.call(this,k,v);try{var y=new XMLHttpRequest();y.open('POST','/__store',true);y.setRequestHeader('Content-Type','application/json');y.send(JSON.stringify({k:k,v:String(v)}))}catch(e){}};
 setInterval(function(){try{fetch('/__ping')}catch(e){}},30000)})();"""
 SH_HEAD = """#!/usr/bin/env bash
-# M-Futures Radar v6.2.4 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026 (Linux / macOS)
+# M-Futures Radar v6.2.3 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026 (Linux / macOS)
 # Chạy: chmod +x futures_radar.sh && ./futures_radar.sh      (cần python3 từ 3.8 trở lên)
 PY="$(command -v python3 || command -v python)"
 if [ -z "$PY" ]; then echo "Cần cài Python 3.8+ (https://www.python.org)"; exit 1; fi
@@ -1033,7 +1109,7 @@ def set_console_icon():
         pass
 
 
-APP_TITLE = "Futures Radar v6.2.4"
+APP_TITLE = "Futures Radar v6.2.3"
 RUN_NAME = "FuturesRadar"
 WINDOW, SRV = None, [None]
 ICON = [None]
@@ -1640,7 +1716,7 @@ document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.query
 let LANG=ST('lang')||'vi',TH=ST('th')||'dark';
 const setTh=()=>{document.documentElement.dataset.theme=TH;$('#thm').textContent=TH==='dark'?'☾':'☀'};
 $('#thm').onclick=()=>{TH=TH==='dark'?'light':'dark';ST('th',TH);setTh()};setTh();
-const TITLE='Futures Radar v6.2.4 - Official-release 15/11/2026 - updated 20 - 0906735165 - Tây Ninh Nov 2026',KEYS=Object.keys(EN).sort((a,b)=>b.length-a.length);
+const TITLE='Futures Radar v6.2.3 - Official-release 15/11/2026 - updated 20 - 0906735165 - Tây Ninh Nov 2026',KEYS=Object.keys(EN).sort((a,b)=>b.length-a.length);
 const TRC=new Map(),NOTXT=/^[^A-Za-zÀ-ỹ]*$/;
 const trs=s=>{if(LANG!=='en'||!s||NOTXT.test(s))return s;let r=TRC.get(s);if(r!==undefined)return r;r=s;for(const k of KEYS)if(r.includes(k))r=r.split(k).join(EN[k]);if(TRC.size>4000)TRC.clear();TRC.set(s,r);return r};
 function tn(n){if(n.nodeType===3){if(n._v===undefined)n._v=n.nodeValue;const v=trs(n._v);if(n.nodeValue!==v)n.nodeValue=v}
@@ -1908,7 +1984,7 @@ let ACC=ST('acc')||{cap:1000,real:0},POS=ST('pos')||[],PEND=ST('pend')||[],HIST=
 const bal=()=>ACC.cap+ACC.real,mgn=p=>p.q*p.e/p.lv,pmg=o=>o.q*o.price/o.lv;
 const avail=()=>Math.max(0,bal()-POS.reduce((a,p)=>a+mgn(p),0)-PEND.reduce((a,o)=>a+pmg(o),0));
 ACC.ts=ACC.ts||Date.now();
-/* v6.2.4: nhiều tab/cửa sổ cùng mở file: bản cũ trong bộ nhớ không được ghi đè lệnh mới của bản khác */
+/* v6.2.3: nhiều tab/cửa sổ cùng mở file: bản cũ trong bộ nhớ không được ghi đè lệnh mới của bản khác */
 let REV=ST('trev')||0;
 function adopt(){['acc','pos','pend','hist'].forEach(k=>delete SC[k]);ACC=ST('acc')||ACC;ACC.ts=ACC.ts||Date.now();POS=ST('pos')||[];PEND=ST('pend')||[];HIST=ST('hist')||[];REV=ST('trev')||0;const c=$('#cap');if(c&&document.activeElement!==c)c.value=ACC.cap}
 function pull(){const r=ST('trev')||0;if(r>REV){adopt();return true}return false}
@@ -2141,7 +2217,7 @@ $('#syms').addEventListener('input',()=>{if(!$('#qa').hidden)qRender()});
 const b64=s=>{const u=new TextEncoder().encode(s);let b='';for(let i=0;i<u.length;i+=32768)b+=String.fromCharCode.apply(null,u.subarray(i,i+32768));return btoa(b)};
 function conPrint(h){const c=$('#con');if(!c)return;const d=document.createElement('div');d.innerHTML=h;c.appendChild(d);c.scrollTop=c.scrollHeight}
 const lnk=(u,n,t)=>'<a href="'+u+'" download="'+n+'" style="color:var(--am)">'+t+'</a>';
-function info(){mdl(`<div style="text-align:center"><img src="${LOGO}" alt="" style="width:84px;height:84px;border-radius:16px"><h2 style="margin:8px 0 2px">Futures Radar</h2><small>0906735165 - Tây Ninh Nov 2026</small><br><small><b>v6.2.4 - Official-release 15/11/2026 - updated 20</b></small><p style="margin:10px 0"><b>Hùng Nguyễn 0906735165 - Tây Ninh 25/11/2026</b></p></div>
+function info(){mdl(`<div style="text-align:center"><img src="${LOGO}" alt="" style="width:84px;height:84px;border-radius:16px"><h2 style="margin:8px 0 2px">Futures Radar</h2><small>0906735165 - Tây Ninh Nov 2026</small><br><small><b>v6.2.3 - Official-release 15/11/2026 - updated 20</b></small><p style="margin:10px 0"><b>Hùng Nguyễn 0906735165 - Tây Ninh 25/11/2026</b></p></div>
  <div style="border:1px solid var(--ln);border-radius:8px;padding:8px;margin:8px 0"><b>Kiểu tìm kiếm (Ctrl+F)</b><div class="row" id="sqset" style="margin-top:6px"><button class="g sb2" data-m="find" onclick="V6.sqSetMode('find')">${V6.MAG18} Tìm + nhấp nháy</button><button class="g sb2" data-m="filter" onclick="V6.sqSetMode('filter')">${V6.FUN18} Lọc danh sách</button></div><div class="row"><button class="g sb2" id="sqsel" onclick="V6.selTog()"></button></div><div class="row"><button class="g" onclick="mcl();V6.fsOpen()">⛶ Toàn màn hình / chạy như app</button></div></div><div id="con" class="con"></div><input id="cin" class="cin" placeholder="Gõ lệnh, ví dụ .py rồi Enter" autocomplete="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.key==='Enter')conRun()"><div class="row"><button class="g" onclick="mcl()">Đóng</button></div>`);conPrint('Gõ help để xem danh sách lệnh.');V6.sqUI();setTimeout(()=>{const i=$('#cin');if(i)i.focus()},50)}
 async function conRun(){const i=$('#cin'),c=i.value.trim();i.value='';if(!c)return;conPrint('&gt; '+esc(c));const k=c.toLowerCase();
  if(k==='.py'||k==='py')await exportKind('py');
@@ -2151,7 +2227,7 @@ async function conRun(){const i=$('#cin'),c=i.value.trim();i.value='';if(!c)retu
  else if(k==='help'||k==='?'){['.py : Lưu toàn bộ mã phần mềm thành file .py và hiện đường dẫn','.html : Xuất file .html','.exe : Xuất file .exe cho Windows (chạy bằng file .py trên Windows)','.sh : Xuất file .sh cho Linux và macOS','color : Chỉnh màu, tốc độ nhấp nháy, độ trong suốt, nhấp nháy/đứng im và tắt tô màu cho cảnh báo pullback và giá TP','clear : Xóa màn hình console','about : Thông tin tác giả'].forEach(conPrint)}
  else if(k==='color'||k==='colour'||k==='màu')clrPanel();
  else if(k==='clear'||k==='cls')$('#con').innerHTML='';
- else if(k==='about')conPrint('Futures Radar v6.2.4 - Official-release 15/11/2026 - updated 20<br>Hùng Nguyễn 0906735165 - Tây Ninh 25/11/2026');
+ else if(k==='about')conPrint('Futures Radar v6.2.3 - Official-release 15/11/2026 - updated 20<br>Hùng Nguyễn 0906735165 - Tây Ninh 25/11/2026');
  else conPrint('Lệnh không tồn tại. Gõ help để xem danh sách lệnh.')}
 async function exportKind(kind){
  if(window.__FR__){conPrint('Đang lưu file...');
@@ -2163,7 +2239,7 @@ async function exportKind(kind){
   if(kind==='sh')t=SH_HEAD+t+SH_TAIL}
  const url=URL.createObjectURL(new Blob([t],{type:'application/octet-stream'}));
  conPrint('Đã tạo file futures_radar.'+kind+' ('+f(t.length/1024,0)+' KB).');conPrint(lnk(url,'futures_radar.'+kind,'Bấm vào đây để lưu file'))}
-const SH_HEAD='#!/usr/bin/env bash\n# M-Futures Radar v6.2.4 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026 (Linux / macOS)\n# Chạy: chmod +x futures_radar.sh && ./futures_radar.sh      (cần python3 từ 3.8 trở lên)\nPY="$(command -v python3 || command -v python)"\nif [ -z "$PY" ]; then echo "Cần cài Python 3.8+ (https://www.python.org)"; exit 1; fi\nAPP_DIR="$HOME/.futures_radar"\nmkdir -p "$APP_DIR"\ncat > "$APP_DIR/futures_radar.py" <<\'FR_PY_EOF\'\n',SH_TAIL='FR_PY_EOF\nexec "$PY" "$APP_DIR/futures_radar.py" "$@"\n';
+const SH_HEAD='#!/usr/bin/env bash\n# M-Futures Radar v6.2.3 (updated 20 · 19/11/2026 10:03:55) - 0906735165 - Tây Ninh Nov 2026 (Linux / macOS)\n# Chạy: chmod +x futures_radar.sh && ./futures_radar.sh      (cần python3 từ 3.8 trở lên)\nPY="$(command -v python3 || command -v python)"\nif [ -z "$PY" ]; then echo "Cần cài Python 3.8+ (https://www.python.org)"; exit 1; fi\nAPP_DIR="$HOME/.futures_radar"\nmkdir -p "$APP_DIR"\ncat > "$APP_DIR/futures_radar.py" <<\'FR_PY_EOF\'\n',SH_TAIL='FR_PY_EOF\nexec "$PY" "$APP_DIR/futures_radar.py" "$@"\n';
 async function exportExe(){
  if(!window.__FR__){conPrint('Lệnh .exe chỉ chạy khi mở app bằng file futures_radar.py trên Windows. Gõ .py để lưu file .py, chạy nó rồi gõ .exe.');return}
  let j;try{j=await(await fetch('/__build_exe',{method:'POST'})).json()}catch(e){conPrint('Không bắt đầu được: '+esc(e));return}
@@ -2178,7 +2254,7 @@ async function topSet(on){
 $('#logo').onclick=info;$('#atop').onchange=e=>topSet(e.target.checked);
 if(ST('atop')&&window.__FR__){$('#atop').checked=true;setTimeout(()=>topSet(true),2500)}
 
-/* ===== v6.2.4: tìm kiếm nhanh, sắp xếp / lọc kết quả, chạy như app ===== */
+/* ===== v6.2.3: tìm kiếm nhanh, sắp xếp / lọc kết quả, chạy như app ===== */
 const V6={D:{dir:'all',min:0,al:0,pmin:0,pmax:100,adx:0,warn:0,nocnt:0,rsi:0},SORT:ST('srt')||{k:'',d:1},SQ:'',SQM:ST('sqm')==='filter'?'filter':'find',SEL:ST('sqsel')!==0,IP:null};
 V6.FLT=Object.assign({},V6.D,ST('flt')||{});
 V6.MAG='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>';
@@ -2437,6 +2513,8 @@ setTheme(ST('pct')||'');
   <span class="fr-flt-sep"></span>
   <button type="button" class="fr-flt-btn tog" id="fr-tog-nojunk" title="Loại cặp coin rác (Vol 24h < $8M hoặc ít giao dịch)">🚫 Loại coin rác</button>
   <button type="button" class="fr-flt-btn tog" id="fr-tog-nomanip" title="Loại cặp biến động/rút râu thao túng giá >= 35%">🛡️ Loại thao túng giá</button>
+  <span id="fr-flt-col-sum">Bộ lọc: Tất cả</span>
+  <button type="button" class="fr-flt-btn fr-col-btn" id="fr-flt-toggle" title="Thu gọn thanh lọc">▲</button>
 </div>
 
 <div id="fr-settings-modal" class="fr-modal"><div class="fr-card">
@@ -2607,7 +2685,7 @@ setTheme(ST('pct')||'');
 </div></div>
 
 <div id="fr-toast-stack"></div>
-<script>window.__FR_VER__="v6.2.4";window.__FR_UPDATED__="20";window.__FR_UPDATED_AT__="19/11/2026 10:03:55";
+<script>window.__FR_VER__="v6.2.3";window.__FR_UPDATED__="20";window.__FR_UPDATED_AT__="19/11/2026 10:03:55";
 (function(){
   if (window.__FR_UI_INIT__) return;
   window.__FR_UI_INIT__ = true;
@@ -3551,8 +3629,31 @@ setTheme(ST('pct')||'');
       if ($('fr-cnt-signal')) $('fr-cnt-signal').textContent = cSig ? ('(' + cSig + ')') : '';
       if ($('fr-cnt-good')) $('fr-cnt-good').textContent = cGood ? ('(' + cGood + ')') : '';
       if ($('fr-cnt-entry')) $('fr-cnt-entry').textContent = cEntry ? ('(' + cEntry + ')') : '';
+      updateFilterCollapseSummary();
       syncTopBarsLayout();
     } catch (e) {}
+  }
+
+  function updateFilterCollapseSummary() {
+    var sum = $('fr-flt-col-sum');
+    if (!sum) return;
+    var actBtn = document.querySelector('#fr-filter-bar .fr-flt-btn[data-flt].active');
+    var lbl = actBtn ? (actBtn.textContent || '').replace(/\s+/g, ' ').trim() : 'Tất cả';
+    var extras = [];
+    if (filterState.noJunk) extras.push('🚫');
+    if (filterState.noManip) extras.push('🛡️');
+    sum.textContent = 'Bộ lọc: ' + lbl + (extras.length ? (' · ' + extras.join(' ')) : '');
+  }
+
+  function applyFilterCollapseState() {
+    var fb = $('fr-filter-bar'), btn = $('fr-flt-toggle');
+    if (!fb || !btn) return;
+    var col = localStorage.getItem('fr_flt_collapsed') === '1';
+    fb.classList.toggle('collapsed', col);
+    btn.textContent = col ? '▼' : '▲';
+    btn.title = col ? 'Mở rộng thanh lọc' : 'Thu gọn thanh lọc';
+    updateFilterCollapseSummary();
+    syncTopBarsLayout();
   }
 
   function syncFilterButtonsUI() {
@@ -3561,6 +3662,7 @@ setTheme(ST('pct')||'');
     });
     if ($('fr-tog-nojunk')) $('fr-tog-nojunk').classList.toggle('active', !!filterState.noJunk);
     if ($('fr-tog-nomanip')) $('fr-tog-nomanip').classList.toggle('active', !!filterState.noManip);
+    updateFilterCollapseSummary();
   }
 
   function getAlerts() { var a = loadJSON('fr_price_alerts', []); return Array.isArray(a) ? a : []; }
@@ -4099,6 +4201,12 @@ setTheme(ST('pct')||'');
     });
     if ($('fr-tog-nojunk')) $('fr-tog-nojunk').onclick = function() { filterState.noJunk = !filterState.noJunk; saveJSON('fr_filter_state', filterState); syncFilterButtonsUI(); applySignalFilters(); };
     if ($('fr-tog-nomanip')) $('fr-tog-nomanip').onclick = function() { filterState.noManip = !filterState.noManip; saveJSON('fr_filter_state', filterState); syncFilterButtonsUI(); applySignalFilters(); };
+    if ($('fr-flt-toggle')) $('fr-flt-toggle').onclick = function() {
+      var next = localStorage.getItem('fr_flt_collapsed') !== '1';
+      try { localStorage.setItem('fr_flt_collapsed', next ? '1' : '0'); } catch (e) {}
+      applyFilterCollapseState();
+      setTimeout(syncTopBarsLayout, 30);
+    };
 
     if ($('fr-al-autoradar')) {
       $('fr-al-autoradar').checked = localStorage.getItem('fr_al_autoradar') !== '0';
@@ -4745,8 +4853,172 @@ setTheme(ST('pct')||'');
     } catch (e) {}
   }
 
+  var _frHdrTargets = null;
+
+  function _isCleanHdrNode(el) {
+    if (!el || el === document.body || el === document.documentElement) return false;
+    if (el.closest('#fr-top-bar, #fr-filter-bar, .fr-modal, #fr-ctrlf-bar2, #fr-ctrlf-2-drop, #fr-toast-stack, #fr-url-ctx-menu, #res, #fres, #fr-hdr-mini, #fr-hdr-col-btn')) return false;
+    if (el.querySelector('select, input, textarea, table, #res, #fres')) return false;
+    var txt = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (txt.length > 380) return false;
+    if (/(Thêm nhanh|Tiếng Việt|Always on top|Quét tất cả|Tự quét)/i.test(txt)) return false;
+    return true;
+  }
+
+  function _findInnermostHdrEl(rx, maxLen) {
+    var all = document.querySelectorAll('div, header, section, h1, h2, h3, p, span, small, b, strong, a');
+    var best = null;
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      if (!_isCleanHdrNode(el)) continue;
+      var txt = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (!txt || txt.length > (maxLen || 340)) continue;
+      if (!rx.test(txt)) continue;
+      var r = el.getBoundingClientRect();
+      if (r.width < 30 || r.height < 10 || r.height > 220) continue;
+      if (!best || best.contains(el)) best = el;
+    }
+    return best;
+  }
+
+  function _highestCleanAncestor(el) {
+    var cur = el;
+    while (cur && cur.parentElement && _isCleanHdrNode(cur.parentElement)) {
+      var r = cur.parentElement.getBoundingClientRect();
+      if (r.height > 220) break;
+      cur = cur.parentElement;
+    }
+    return cur;
+  }
+
+  function findAppHeaderTargets() {
+    var subEl = _findInnermostHdrEl(/Official[-\s]*release/i, 260);
+    var brandEl = _findInnermostHdrEl(/(M-Futures\s*Radar|Futures\s*Radar|0906735165)/i, 300);
+    if (!subEl && !brandEl) return null;
+
+    var topA = brandEl ? _highestCleanAncestor(brandEl) : null;
+    var topB = subEl ? _highestCleanAncestor(subEl) : null;
+    var list = [];
+    if (topA) list.push(topA);
+    if (topB && list.indexOf(topB) === -1) list.push(topB);
+
+    if (list.length) {
+      var first = list[0], prev = first.previousElementSibling;
+      if (prev && _isCleanHdrNode(prev)) {
+        var pr = prev.getBoundingClientRect();
+        var hasLogo = !!prev.querySelector('img, svg, canvas') || /^(IMG|SVG|CANVAS)$/i.test(prev.tagName);
+        if (hasLogo && pr.height > 0 && pr.height <= 140 && (prev.innerText || '').trim().length < 60) {
+          list.unshift(prev);
+        }
+      }
+    }
+    list = list.filter(function(item) {
+      return !list.some(function(other) { return other !== item && other.contains(item); });
+    });
+    if (!list.length) return null;
+    var btnHost = topA || list[0];
+    return { targets: list, anchor: list[0], btnHost: btnHost };
+  }
+
+  function applyHeaderCollapseState(info) {
+    if (!info || !info.targets || !info.targets.length) return;
+    var mini = $('fr-hdr-mini');
+    var col = localStorage.getItem('fr_hdr_collapsed') === '1';
+    info.targets.forEach(function(el) {
+      if (col) {
+        if (el.getAttribute('data-fr-orig-disp') === null) {
+          el.setAttribute('data-fr-orig-disp', el.style.display || '');
+        }
+        el.style.setProperty('display', 'none', 'important');
+      } else {
+        var origDisp = el.getAttribute('data-fr-orig-disp');
+        if (origDisp !== null) {
+          if (origDisp) el.style.display = origDisp; else el.style.removeProperty('display');
+        } else {
+          el.style.removeProperty('display');
+        }
+      }
+    });
+    if (mini) {
+      if (col) {
+        var ver = window.__FR_VER__ || '';
+        var lbl = $('fr-hdr-mini-lbl');
+        if (lbl) lbl.textContent = '📡 M-Futures Radar ' + ver + ' (bấm để mở Console)';
+        mini.style.display = 'flex';
+      } else {
+        mini.style.display = 'none';
+      }
+    }
+  }
+
+  function ensureHeaderCollapse() {
+    try {
+      var info = _frHdrTargets;
+      if (!info || !info.btnHost || !document.body.contains(info.btnHost)) {
+        info = findAppHeaderTargets();
+        if (!info) return;
+        _frHdrTargets = info;
+      }
+      var btnHost = info.btnHost, anchor = info.anchor;
+      if (btnHost.getAttribute('data-fr-hdr-wired') !== '1') {
+        btnHost.setAttribute('data-fr-hdr-wired', '1');
+        var cs = getComputedStyle(btnHost);
+        if (cs.position === 'static') btnHost.style.position = 'relative';
+        if ((parseFloat(cs.paddingRight) || 0) < 30) btnHost.style.paddingRight = '32px';
+
+        var stopEvt = function(e) { e.preventDefault(); e.stopPropagation(); };
+        var colBtn = $('fr-hdr-col-btn');
+        if (!colBtn) {
+          colBtn = document.createElement('button');
+          colBtn.type = 'button';
+          colBtn.id = 'fr-hdr-col-btn';
+          colBtn.className = 'fr-hdr-col-btn';
+          colBtn.title = 'Thu gọn khung tiêu đề';
+          colBtn.textContent = '▲';
+          colBtn.addEventListener('mousedown', stopEvt);
+          colBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            try { localStorage.setItem('fr_hdr_collapsed', '1'); } catch (err) {}
+            applyHeaderCollapseState(_frHdrTargets);
+          });
+          btnHost.appendChild(colBtn);
+        }
+
+        var mini = $('fr-hdr-mini');
+        if (!mini && anchor && anchor.parentNode) {
+          mini = document.createElement('div');
+          mini.id = 'fr-hdr-mini';
+          mini.innerHTML = '<span id="fr-hdr-mini-lbl" title="Bấm để mở bảng Thông tin &amp; Console">📡 M-Futures Radar</span><button type="button" class="fr-hdr-col-btn" id="fr-hdr-exp-btn" style="position:static" title="Mở rộng khung tiêu đề">▼</button>';
+          anchor.parentNode.insertBefore(mini, anchor);
+          var lbl = $('fr-hdr-mini-lbl');
+          if (lbl) lbl.onclick = function(e) {
+            e.preventDefault(); e.stopPropagation();
+            var clickTarget = null;
+            for (var k = 0; k < info.targets.length; k++) {
+              clickTarget = info.targets[k].querySelector('img, svg, canvas, [class*="logo" i], [id*="logo" i]');
+              if (clickTarget) break;
+              if (/^(IMG|SVG|CANVAS)$/i.test(info.targets[k].tagName)) { clickTarget = info.targets[k]; break; }
+            }
+            try { (clickTarget || btnHost).click(); } catch (err) {}
+          };
+          var expBtn = $('fr-hdr-exp-btn');
+          if (expBtn) {
+            expBtn.addEventListener('mousedown', stopEvt);
+            expBtn.addEventListener('click', function(e) {
+              e.preventDefault(); e.stopPropagation();
+              try { localStorage.setItem('fr_hdr_collapsed', '0'); } catch (err) {}
+              applyHeaderCollapseState(_frHdrTargets);
+            });
+          }
+        }
+      }
+      applyHeaderCollapseState(info);
+    } catch (e) {}
+  }
+
   function boot() {
     wireEvents();
+    applyFilterCollapseState();
     syncTopBarsLayout();
     setTimeout(syncTopBarsLayout, 150);
     setTimeout(syncTopBarsLayout, 600);
@@ -4758,6 +5030,7 @@ setTheme(ST('pct')||'');
       }
     } catch (e) {}
     ensureClonedCtrlFBar(); setTimeout(ensureClonedCtrlFBar, 350); setTimeout(ensureClonedCtrlFBar, 1200);
+    ensureHeaderCollapse(); setTimeout(ensureHeaderCollapse, 350); setTimeout(ensureHeaderCollapse, 1200);
     if (!window.__FR__) {
       if ($('fr-btn-pin')) $('fr-btn-pin').style.display = 'none';
       if ($('fr-cfg-top') && $('fr-cfg-top').parentElement) $('fr-cfg-top').parentElement.style.display = 'none';
@@ -4769,12 +5042,12 @@ setTheme(ST('pct')||'');
       var curAl = getAlerts();
       if (curAl.length) fetch('/__alerts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ alerts: curAl }) }).catch(function(){});
     }
-    setInterval(pingNet, 6000); setInterval(syncFromServer, 3000); setInterval(function() { renderPtktEnhancements(); applySignalFilters(); }, 2200);
+    setInterval(pingNet, 6000); setInterval(syncFromServer, 3000); setInterval(function() { if (!document.querySelector('[data-fr-hdr-wired="1"]')) ensureHeaderCollapse(); renderPtktEnhancements(); applySignalFilters(); }, 2200);
     document.addEventListener('click', function() { setTimeout(renderPtktEnhancements, 80); setTimeout(renderPtktEnhancements, 450); }, true);
     var obsTimer = null;
     new MutationObserver(function() {
       if (obsTimer) return;
-      obsTimer = setTimeout(function() { obsTimer = null; try { sanitizeDOMText(); hideForbiddenContextItems(); ensureClonedCtrlFBar(); renderPtktEnhancements(); applySignalFilters(); } catch (e) {} }, 250);
+      obsTimer = setTimeout(function() { obsTimer = null; try { sanitizeDOMText(); hideForbiddenContextItems(); ensureClonedCtrlFBar(); ensureHeaderCollapse(); renderPtktEnhancements(); applySignalFilters(); } catch (e) {} }, 250);
     }).observe(document.body, { childList: true, subtree: true });
   }
   document.addEventListener('click', function() { setTimeout(fixNativeConsoleModal, 20); setTimeout(fixNativeConsoleModal, 120); }, true);
